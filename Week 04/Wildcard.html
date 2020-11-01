@@ -21,7 +21,7 @@
                         return false;
                     }
                 }
-                return;
+                return true;
             }
 
             let i = 0;
@@ -39,17 +39,21 @@
                     i++;
                 }
 
-                let reg = new RegExp(subPattern.replace(/\?/g, "[\\s\\S]", "g"));
+                let reg = new RegExp(subPattern.replace(/\?/g, "[\\s\\S]"), "g");
                 reg.lastIndex = lastIndex;
 
                 //console.log(reg.exec(source));
-                if (!reg.exec(source)) {
-                    return false;
-                }
+                 if (!reg.exec(source)) {
+                     return false;
+                 }
+                
                 lastIndex = reg.lastIndex;
             }
 
             for (let j = 0; j <= source.length - lastIndex && pattern[pattern.length - j] !== "*"; j++) {
+                if((source.length - lastIndex)<=(pattern.length - i) && pattern[pattern.length] !== "*") {  //find("mississippi","m??*ss*?i*pi")
+                    return false;
+                }
                 if (pattern[pattern.length - j] !== source[source.length - j] && pattern[pattern.length - j] !== "?") {
                     return false;
                 }

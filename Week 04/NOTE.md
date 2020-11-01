@@ -14,7 +14,7 @@
 
 
 ## 字典树
-    字典树是哈系树的特例
+    字典树是哈希树的特例
 ## KMP
     pattern:abcdabce
     source:abcdabcdabcex
