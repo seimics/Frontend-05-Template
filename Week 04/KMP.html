@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMP</title>
+</head>
+
+<body>
+    <script>
+        function kmp(source, pattern) {
+
+            //计算table
+            let table = new Array(pattern.length).fill(0); {
+                let i = 1,
+                    j = 0; //i:自重复串开始的位置，j:以重复字数
+
+                while (i < pattern.length) {
+                    if (pattern[i] === pattern[j]) {
+                        ++i, ++j;
+                        table[i] = j;
+                    } else {
+                        if (j > 0) {
+                            j = table[j]; //aabaaac ************
+                        } else {
+                            ++i;
+                        }
+                    }
+                } {
+                    let res = 0;
+                    let i = 0,
+                        j = 0;
+                    while (i < source.length) {
+
+                        if (source[i] === pattern[j]) {
+                            ++i, ++j;
+                        } else {
+                            if (j > 0) {
+                                j = table[j]; //aabaaac ************
+                            } else {
+                                ++i;
+                            }
+                        }
+                        if (j === pattern.length) {
+                            res = i - pattern.length + 1;
+                            return res;
+                        }
+                    }
+                    return res;
+                }
+            }
+
+            //abcdabce
+            //aabaaac
+            //abababc
+        }
+
+        console.log(kmp("hoijijello", "ll"));
+    </script>
+</body>
+
+</html>
