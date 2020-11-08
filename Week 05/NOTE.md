@@ -67,7 +67,7 @@ effect(() => {
         document.addEventListener("mouseup", up);
         document.addEventListener("mousemove", move);
     })
-	```
+```
 
 8. 使用Range实现正常流拖拽
 
@@ -94,4 +94,4 @@ effect(() => {
         return nearest;
     }
     document.addEventListener("selectstart", event=>event.preventDefault());
-	```
+```
