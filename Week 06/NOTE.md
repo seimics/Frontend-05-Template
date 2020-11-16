@@ -29,3 +29,36 @@
 用途分类：
 	数据描述语言：JSON,HTML,XAML,SQL,CSS
 	编程语言: Lisp,T-SQL,CLojure,Haskell,JavaScript
+表达方式：
+	声明式：JSON,HTML,XAML,SQL,CSS,Lisp,Closure,Haskell
+	命令式：C,C++,C#,Java,JavaScript,Python,Ruby,Perl
+
+#### 编程语言的性质
+图灵完备性：
+	命令式语言：图灵机  goto  if与while
+	声明式语言：lambda  递归
+动态与静态：
+	动态：
+		在用户的设备、在线服务器上
+		产品实际运行时
+		Runtime
+	静态：
+		在程序员设备上
+		产品开发时
+		CompileTime
+		
+#### 类型系统
+动态类型系统与静态类型系统
+	动态：Javascript   可以将类型当字符串取出
+	静态：C++  编译到目标机器代码时，所有的类型信息都被丢掉了
+	半动态半静态：Java  反射机制
+强类型与弱类型：
+	强类型的不会默认发生类型转换
+复合类型：
+	JS中函数可以当作参数传递，函数的类型称为函数签名。包括参数类型和返回值类型两个部分，参数类型可以是列表
+子类型：
+	C++，
+泛型：
+	把类型当作一个参数一样的东西传给某一段代码（类或者函数等等），泛型和子类型组合形成逆变、协变这样的东西
+	
+	
