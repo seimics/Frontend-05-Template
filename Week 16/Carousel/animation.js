@@ -35,9 +35,6 @@ export class Timeline {
         this[TICK]();
     }
 
-    set rate(rate) {}
-    get rate() {}
-
     pause() {
         if (this.state !== "started") return;
         this.state = "paused";
